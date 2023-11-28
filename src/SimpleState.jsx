@@ -1,19 +1,26 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import './App.css'
 
-function SimpleState(){
+function SimpleState() {
     const [b, setB] = useState(21)
-    var a = 20;
-    var clickefn= ()=> {
-   setB(b+1)
+    var clickefn = () => {
+        setB(b + 1)
     }
     return (
-    <div className="App">
-        <h1>This is State component</h1>
-        <h1>{a}</h1>
-        <h1>{b}</h1>
-        <button onClick={clickefn}>Increase</button>
 
-    </div>
+        <div className="App">
+            <h1>This is State component</h1>
+            <button onClick={clickefn}>Increase</button>
+            <h1>{b}</h1>
+            <div className="App">
+                <span className={b % 2 == 0 ? "even" : "odd"} style={{ height: 100, width: 100 }}>
+                    <h2 >{b % 2 == 0 ? "It is a Even " : "It is a Odd"}</h2>
+                </span>
+            </div>
+
+
+        </div>
+
     )
 }
 export default SimpleState
