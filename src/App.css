@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.even{
+  background-color:#61dafb;
+  display:inline-block;
+  border-radius: 8%;
+}
+.odd{
+  background-color:chocolate;
+  display:inline-block;
+  border-radius: 8%;
+}
