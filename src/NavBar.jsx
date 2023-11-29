@@ -27,6 +27,15 @@ function NavBar(props) {
           <li class="nav-item dropdown me-3">
             <Link to='/child'>Child to Parent </Link>
           </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/library'>UI Library</Link>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/context'>Context API</Link>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/redux'>Redux</Link>
+          </li>
         </ul>
       </div>
     </nav>

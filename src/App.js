@@ -6,9 +6,15 @@ import { Routes, Route } from 'react-router-dom'
 import Users from './Users';
 import Effect from './Effect';
 import ChildToParent from './ChildToParent';
+import UILibrary from './UiLibrary';
+import ContextComponent from './ContextApi/ContextComponent';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import ReduxComponent from './ReduxComponent';
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <NavBar />
       <Routes>
@@ -17,10 +23,14 @@ function App() {
         <Route path='/users' element={<Users />} />
         <Route path='/effect' element={<Effect />} />
         <Route path='/child' element={<ChildToParent />} />
+        <Route path='/library' element={<UILibrary />} />
+        <Route path='/context' element={<ContextComponent />} />
+        <Route path='/redux' element={<ReduxComponent />} />
       </Routes>
 
 
     </div>
+    </Provider>
   );
 }
 
