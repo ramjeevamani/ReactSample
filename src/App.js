@@ -11,25 +11,30 @@ import ContextComponent from './ContextApi/ContextComponent';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import ReduxComponent from './ReduxComponent';
+import CrudForm from './PostFields';
+import Posts from './Posts';
+import ReduxPosts from './PostsUpdated';
 
 function App() {
   return (
     <Provider store={store}>
-    <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Component user={{ name: 'Ramu', role: "developer", mail: "rj.jeevamani@gmail.com" }}> </Component>} />
-        <Route path='/state' element={<SimpleState />} />
-        <Route path='/users' element={<Users />} />
-        <Route path='/effect' element={<Effect />} />
-        <Route path='/child' element={<ChildToParent />} />
-        <Route path='/library' element={<UILibrary />} />
-        <Route path='/context' element={<ContextComponent />} />
-        <Route path='/redux' element={<ReduxComponent />} />
-      </Routes>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Component user={{ name: 'Ramu', role: "developer", mail: "rj.jeevamani@gmail.com" }}> </Component>} />
+          <Route path='/state' element={<SimpleState />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/effect' element={<Effect />} />
+          <Route path='/child' element={<ChildToParent />} />
+          <Route path='/library' element={<UILibrary />} />
+          <Route path='/context' element={<ContextComponent />} />
+          <Route path='/redux' element={<ReduxComponent />} />
+          <Route path='/crud' element={<CrudForm />} />
+          <Route path='/post' element={<Posts />} />
+          <Route path='/reduxpost' element={<ReduxPosts />} />
+        </Routes>
 
-
-    </div>
+      </div>
     </Provider>
   );
 }
