@@ -36,6 +36,15 @@ function NavBar(props) {
           <li class="nav-item dropdown me-3">
             <Link to='/redux'>Redux</Link>
           </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/crud'>Crud Operations</Link>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/post'>Posts</Link>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/reduxpost'>Redux Posts</Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -1,2 +1,9 @@
 export const INCREMENT ='INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const ADD ='ADD';
+export const DELETE = 'DELETE';
+export const ADD_ITEM = 'ADD_ITEM';
+export const UPDATE_ITEM = 'UPDATE_ITEM';
+export const DELETE_ITEM = 'DELETE_ITEM';
+export const ADD_POST = "ADD_POST";
+export const DELETE_POST = "DELETE_POST";

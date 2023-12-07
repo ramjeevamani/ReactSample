@@ -13,16 +13,16 @@ function Effect() {
                 console.log(values);
                 setValues(values);
             })
-            fetch('https://dummyjson.com/products/category/smartphones')
+        fetch('https://dummyjson.com/products/category/smartphones')
             .then(p => { return p.json() })
             .then((phones) => {
                 console.log(phones)
                 setPhones(phones.products)
             })
 
-    },[])
+    }, [])
 
-  
+
     // useEffect(()=>{
     // console.log("inside the state variable")
     // setState(state)
@@ -30,7 +30,6 @@ function Effect() {
 
     return (
         <div>
-            {console.log('inside the return')}
             <h1>This is Effect Page</h1>
             <h1> Count : {state} </h1>
             <button onClick={() => { setState(state + 1) }}> Increase</button>
@@ -43,8 +42,8 @@ function Effect() {
 
                 {phones.map((phone, i) => {
                     return <> <h2> Name:{phone.title}</h2>
-                    <p> {phone.discription}</p>
-                    <img style={{width:"200px", height:'200px'}} src={phone.thumbnail} />
+                        <p> {phone.discription}</p>
+                        <img style={{ width: "200px", height: '200px' }} src={phone.thumbnail} />
 
                     </>
                 })
