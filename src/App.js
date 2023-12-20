@@ -14,6 +14,8 @@ import ReduxComponent from './ReduxComponent';
 import CrudForm from './PostFields';
 import Posts from './Posts';
 import ReduxPosts from './PostsUpdated';
+import EffectReducerComponent from './EffectReducerComponent';
+import SmartphonesList from './SmartPhonesList';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path='/crud' element={<CrudForm />} />
           <Route path='/post' element={<Posts />} />
           <Route path='/reduxpost' element={<ReduxPosts />} />
+          <Route path='/effect-reducer' element={<EffectReducerComponent />} />
+          <Route path='/smartphone' element={<SmartphonesList />} />
         </Routes>
 
       </div>
@@ -46,12 +50,3 @@ export default App;
 
 
 
-
-// <Routes>
-// <Route></Route>
-// <NavBar />
-// <h1 >Hello React</h1>
-// <button>Click me</button>
-// <Component  user= { {name:'Ramu', role:"developer", mail:"rj.jeevamani@gmail.com"}}> </Component>
-// <SimpleState />
-// </Routes>

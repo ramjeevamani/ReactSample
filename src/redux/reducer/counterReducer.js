@@ -59,6 +59,7 @@ const counterReducer = (state = initialState, action) => {
                 ...state,
                 postdata: [...state.postdata, action.payload],
             };
+            
 
         case UPDATE_ITEM:
             return {

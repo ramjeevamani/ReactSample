@@ -45,6 +45,12 @@ function NavBar(props) {
           <li class="nav-item dropdown me-3">
             <Link to='/reduxpost'>Redux Posts</Link>
           </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/effect-reducer'>Effect Posts</Link>
+          </li>
+          <li class="nav-item dropdown me-3">
+            <Link to='/smartphone'>Smart Phones List</Link>
+          </li>
         </ul>
       </div>
     </nav>

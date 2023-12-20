@@ -7,3 +7,4 @@ export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const ADD_POST = "ADD_POST";
 export const DELETE_POST = "DELETE_POST";
+export const EFFECT_DATA = "EFFECT_DATA";

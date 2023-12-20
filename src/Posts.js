@@ -1,63 +1,64 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, updateItem, deleteItem } from './redux/actions/counterActions';
+import { addItem, deleteItem } from './redux/actions/counterActions';
+import Grid from '@mui/material/Grid';
+import { Box } from '@mui/material';
 
 const Posts = () => {
-    const postdata = useSelector((state) => state.postdata)
-    const dispatch = useDispatch();
+
     const [formData, setFormData] = useState({
-        id: '',
-        name: '',
-        description: '',
-    });
+        firstName: "",
+        lastName: "",
+        address: ""
+    })
+
+    const handleSubmit = () => {
+        console.log(formData)
+        dispatch(addItem(formData))
+    }
+    const handleDelete = (index) => {
+        console.log("Deleting post at index:", index);
+        dispatch(deleteItem(index));
+    }
+
+    const handleChange = (e) => {
+
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+
+    }
+    const dispatch = useDispatch();
+    const { postdata } = useSelector((state) => state.post)
 
     return (
-        <div>
-            <h2>Post Form</h2>
-            <form  >
-                <label className="mb-3" >
-                    Title:
-                    <input
-                        type="text"
-                    />
-                </label>
-                <br />
-                <label className="mb-3" >
-                    Sub Title:
-                    <input
-                        type="text"
-                    />
-                </label>
-                <br />
-                <label className="mb-3">
-                    Description:
-                    <input
-                        type="text"
-                    />
-                </label>
-                <br />
-                <button type="button" onClick={() => { dispatch(addItem()) }} style={{ margin: "10px" }}>
-                    Submit
-                </button>
-                <button type="button" onClick={() => { dispatch(updateItem()) }} style={{ margin: "10px" }}>
-                    Update
-                </button>
-            </form>
-
-            {/* <ul>
-                {postdata.map((item) => (
-                    // <li key={item.id}>
-                    //   {item.name} - {item.description}
-
-                    <button type="button" onClick={() => { dispatch(deleteItem()) }} style={{ margin: "10px" }}>
-                        Delete
-                    </button>
-
-                    // </li>
-                ))}
-            </ul> */}
-            <h2>Post Form Data : {postdata + <br />}</h2>
-        </div>
+        <Grid container spacing={2}>
+            <Grid item xs={6}>
+                <h2>Post Form</h2>
+                <div>
+                    <label>First Name : </label>
+                    <input name="firstName" value={formData.firstName} onChange={handleChange} style={{ marginTop: "20px" }} />
+                </div>
+                <div>
+                    <label>last Name : </label>
+                    <input name="lastName" value={formData.lastName} onChange={handleChange}  style={{ marginTop: "20px" }}/>
+                </div>
+                <div>
+                    <label>Address : </label>
+                    <input name="address" value={formData.address} onChange={handleChange} style={{ marginTop: "20px" }} />
+                </div>
+                <button onClick={handleSubmit}>Submit</button>
+            </Grid>
+            <Grid item xs={6}>
+                {
+                    postdata.map((item, i) => {
+                        return <Box style={{ marginTop: "20px" }}>
+                            <h3>name : {item.firstName + " " + item.lastName}</h3>
+                            <h2>Address: {item.address}</h2>
+                            <button onClick={() => handleDelete(i)}>Delete</button>
+                        </Box>
+                    })
+                }
+            </Grid>
+        </Grid>
     );
 };
 
